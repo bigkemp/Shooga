@@ -16,7 +16,6 @@ public class Alarm {
         Statue = statue;
     }
 
-
     public String getCode() {
         return code;
     }

@@ -93,8 +93,8 @@ public class bgTask extends AsyncTask<String[],Void,Void>{
             httpURLConnection.disconnect();
             String json_string = stringBuilder.toString().trim();
             JSONObject jsonObject = new JSONObject(json_string);
-            boolean success = jsonObject.getBoolean("success");
-            if (success){
+            String success = jsonObject.getString("ID");
+            if (success != null){
                 something = true;
             }else{
                 something = false;
@@ -106,13 +106,13 @@ public class bgTask extends AsyncTask<String[],Void,Void>{
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
-            Log.e("TAG","yay");
+            Log.e("TAG",e.toString());
         } catch (IOException e) {
             e.printStackTrace();
-            Log.e("TAG","yay");
+            Log.e("TAG",e.toString());
         } catch (JSONException e) {
             e.printStackTrace();
-            Log.e("TAG","yay");
+            Log.e("TAG",e.toString());
         }
 
 
